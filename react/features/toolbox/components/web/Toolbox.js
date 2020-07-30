@@ -799,7 +799,7 @@ class Toolbox extends Component<Props, State> {
         } else {
             APP.store.dispatch(showNotification({
                 descriptionKey: '',
-                titleKey: 'Open chat can be done in full screen mode'
+                titleKey: 'Open chat requires full screen.'
             }));
         }        
     }
