@@ -213,7 +213,7 @@ class Filmstrip extends Component <Props> {
         return (
             <div
                 className = { `filmstrip ${this.props._className}` }
-                style = {{width: '70%'}}>
+                style = { filmstripStyle}>
                 { toolbar }
                 <div
                     className = { this.props._videosClassName }

@@ -195,12 +195,10 @@ class Conference extends AbstractConference<Props, *> {
                 onMouseMove = { this._onShowToolbar }>
 
                 <Notice />
+                
                 <div id = 'videospace'>
-		    <div style={{display: 'none'}}>
-			<LargeVideo />
-                    	<KnockingParticipantList />
- 		    </div>
-                    
+		            <LargeVideo />
+                    <KnockingParticipantList />                    
                     <Filmstrip filmstripOnly = { filmstripOnly } />
                     { hideLabels || <Labels /> }
                 </div>
