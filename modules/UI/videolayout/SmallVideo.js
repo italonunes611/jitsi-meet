@@ -705,10 +705,8 @@ export default class SmallVideo {
             statsPopoverPosition = 'right top';
             tooltipPosition = 'right';
         } else if (currentLayout === LAYOUTS.VERTICAL_FILMSTRIP_VIEW) {
-            // statsPopoverPosition = this.statsPopoverLocation;
-            // tooltipPosition = 'left';
-            statsPopoverPosition = 'right top';
-            tooltipPosition = 'right';
+            statsPopoverPosition = this.statsPopoverLocation;
+            tooltipPosition = 'left';
         } else {
             statsPopoverPosition = this.statsPopoverLocation;
             tooltipPosition = 'top';
@@ -840,30 +838,11 @@ export default class SmallVideo {
 
         switch (layout) {
         case LAYOUTS.VERTICAL_FILMSTRIP_VIEW: {
-            // this.$container.css('padding-top', `${heightToWidthPercent}%`);
-            // this.$avatar().css({
-            //     height: '50%',
-            //     width: `${heightToWidthPercent / 2}%`
-            // });
-            // break;
-            const state = APP.store.getState();
-            const { thumbnailSize } = state['features/filmstrip'].tileViewDimensions;
-
-            if (typeof thumbnailSize !== 'undefined') {
-                const { height, width } = thumbnailSize;
-                const avatarSize = height / 2;
-
-                this.$container.css({
-                    height: `${height}px`,
-                    'min-height': `${height}px`,
-                    'min-width': `${width}px`,
-                    width: `${width}px`
-                });
-                this.$avatar().css({
-                    height: `${avatarSize}px`,
-                    width: `${avatarSize}px`
-                });
-            }
+            this.$container.css('padding-top', `${heightToWidthPercent}%`);
+            this.$avatar().css({
+                height: '50%',
+                width: `${heightToWidthPercent / 2}%`
+            });
             break;
         }
         case LAYOUTS.HORIZONTAL_FILMSTRIP_VIEW: {
