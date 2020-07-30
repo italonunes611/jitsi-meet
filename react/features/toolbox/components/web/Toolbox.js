@@ -83,6 +83,7 @@ import OverflowMenuButton from './OverflowMenuButton';
 import OverflowMenuProfileItem from './OverflowMenuProfileItem';
 import ToolbarButton from './ToolbarButton';
 import VideoSettingsButton from './VideoSettingsButton';
+import { showNotification } from '../../../notifications';
 
 /**
  * The type of the React {@code Component} props of {@link Toolbox}.
@@ -786,13 +787,21 @@ class Toolbox extends Component<Props, State> {
      * @returns {void}
      */
     _onToolbarToggleChat() {
-        sendAnalytics(createToolbarEvent(
-            'toggle.chat',
-            {
-                enable: !this.props._chatOpen
-            }));
 
-        this._doToggleChat();
+        if(this.props._fullScreen == true) {
+            sendAnalytics(createToolbarEvent(
+                'toggle.chat',
+                {
+                    enable: !this.props._chatOpen
+                }));
+    
+            this._doToggleChat();
+        } else {
+            APP.store.dispatch(showNotification({
+                descriptionKey: '',
+                titleKey: 'Open chat can be done in full screen mode'
+            }));
+        }        
     }
 
     _onToolbarToggleFullScreen: () => void;
