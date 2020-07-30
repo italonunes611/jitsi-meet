@@ -1046,13 +1046,13 @@ class Toolbox extends Component<Props, State> {
                     key = 'stats'
                     onClick = { this._onToolbarOpenSpeakerStats }
                     text = { t('toolbar.speakerStats') } />,
-            this._shouldShowButton('embedmeeting')
+            /*this._shouldShowButton('embedmeeting')
                 && <OverflowMenuItem
                     accessibilityLabel = { t('toolbar.accessibilityLabel.embedMeeting') }
                     icon = { IconCodeBlock }
                     key = 'embed'
                     onClick = { this._onToolbarOpenEmbedMeeting }
-                    text = { t('toolbar.embedMeeting') } />,
+                    text = { t('toolbar.embedMeeting') } />,*/
             this._shouldShowButton('feedback')
                 && _feedbackConfigured
                 && <OverflowMenuItem
