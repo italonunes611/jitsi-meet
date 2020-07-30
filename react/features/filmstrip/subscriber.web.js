@@ -66,7 +66,20 @@ StateListenerRegistry.register(
             break;
         case LAYOUTS.VERTICAL_FILMSTRIP_VIEW:
             // Once the thumbnails are reactified this should be moved there too.
-            Filmstrip.resizeThumbnailsForVerticalView();
+            // Filmstrip.resizeThumbnailsForVerticalView();
+            const { clientHeight, clientWidth } = state['features/base/responsive-ui'];
+            const { isOpen } = state['features/chat'];
+
+            store.dispatch(
+                setTileViewDimensions(
+                    getTileViewGridDimensions(state),
+                    {
+                        clientHeight,
+                        clientWidth
+                    },
+                    isOpen
+                )
+            );
             break;
         }
     });

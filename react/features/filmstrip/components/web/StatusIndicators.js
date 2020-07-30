@@ -69,7 +69,8 @@ class StatusIndicators extends Component<Props> {
             tooltipPosition = 'right';
             break;
         case LAYOUTS.VERTICAL_FILMSTRIP_VIEW:
-            tooltipPosition = 'left';
+            // tooltipPosition = 'left';
+            tooltipPosition = 'right';
             break;
         default:
             tooltipPosition = 'top';
