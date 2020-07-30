@@ -196,8 +196,11 @@ class Conference extends AbstractConference<Props, *> {
 
                 <Notice />
                 <div id = 'videospace'>
-                    <LargeVideo />
-                    <KnockingParticipantList />
+		    <div style={{display: 'none'}}>
+			<LargeVideo />
+                    	<KnockingParticipantList />
+ 		    </div>
+                    
                     <Filmstrip filmstripOnly = { filmstripOnly } />
                     { hideLabels || <Labels /> }
                 </div>

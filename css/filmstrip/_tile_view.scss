@@ -86,10 +86,11 @@
         align-items: center;
         box-sizing: border-box;
         display: flex;
-        flex-wrap: wrap;
+        //flex-wrap: wrap;
         margin-top: auto;
         margin-bottom: auto;
         justify-content: center;
+	flex-direction: column;
 
         .videocontainer {
             border: 0;

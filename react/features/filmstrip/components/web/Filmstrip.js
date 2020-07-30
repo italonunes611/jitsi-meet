@@ -127,7 +127,7 @@ class Filmstrip extends Component <Props> {
 
         // Cache the current hovered state for _updateHoveredState to always
         // send the last known hovered state.
-        this._isHovered = false;
+        this._isHovered = true;
 
         // Bind event handlers so they are only bound once for every instance.
         this._onMouseOut = this._onMouseOut.bind(this);
@@ -213,7 +213,7 @@ class Filmstrip extends Component <Props> {
         return (
             <div
                 className = { `filmstrip ${this.props._className}` }
-                style = { filmstripStyle }>
+                style = {{width: '70%'}}>
                 { toolbar }
                 <div
                     className = { this.props._videosClassName }
@@ -221,7 +221,7 @@ class Filmstrip extends Component <Props> {
                     <div
                         className = 'filmstrip__videos'
                         id = 'filmstripLocalVideo'
-                        onMouseOut = { this._onMouseOut }
+                        onMouseOut = { this._onMouseOver }
                         onMouseOver = { this._onMouseOver }>
                         <div id = 'filmstripLocalVideoThumbnail' />
                     </div>
@@ -236,7 +236,7 @@ class Filmstrip extends Component <Props> {
                         <div
                             className = { remoteVideoContainerClassName }
                             id = 'filmstripRemoteVideosContainer'
-                            onMouseOut = { this._onMouseOut }
+                            onMouseOut = { this._onMouseOver }
                             onMouseOver = { this._onMouseOver }
                             style = { filmstripRemoteVideosContainerStyle }>
                             <div id = 'localVideoTileViewContainer' />
@@ -345,7 +345,7 @@ class Filmstrip extends Component <Props> {
         const { t } = this.props;
 
         return (
-            <div className = 'filmstrip__toolbar'>
+            <div className = 'filmstrip__toolbar' style = {{ display: 'none' }}>
                 <button
                     aria-label = { t('toolbar.accessibilityLabel.toggleFilmstrip') }
                     id = 'toggleFilmstripButton'

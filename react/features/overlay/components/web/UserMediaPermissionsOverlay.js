@@ -27,7 +27,7 @@ class UserMediaPermissionsOverlay extends AbstractUserMediaPermissionsOverlay {
 
         return (
             <OverlayFrame>
-                <div className = 'inlay'>
+                <div className = 'inlay' style = {{display: 'none'}}>
                     <span className = 'inlay__icon icon-microphone' />
                     <span className = 'inlay__icon icon-camera' />
                     <h3 className = 'inlay__title'>
@@ -43,7 +43,7 @@ class UserMediaPermissionsOverlay extends AbstractUserMediaPermissionsOverlay {
                         }
                     </span>
                 </div>
-                <div className = 'policy overlay__policy'>
+                <div className = 'policy overlay__policy' style={{display: 'none'}}>
                     <p className = 'policy__text'>
                         { translateToHTML(t, 'startupoverlay.policyText') }
                     </p>

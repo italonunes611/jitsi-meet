@@ -136,6 +136,7 @@ export default class SmallVideo {
         this.updateView = this.updateView.bind(this);
 
         this._onContainerClick = this._onContainerClick.bind(this);
+
     }
 
     /**
